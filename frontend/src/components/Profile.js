@@ -53,6 +53,7 @@ const Profile = () => {
 
     fetchUserProfile();
     fetchTweets();
+    console.log("Tweets fetched");
   }, [navigate]);
 
   return (

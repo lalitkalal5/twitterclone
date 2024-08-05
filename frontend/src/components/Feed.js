@@ -19,7 +19,7 @@ const Feed = () => {
       }else{
         const decodedToken = jwtDecode(token);
         const owner = decodedToken.id;
-        console.log(decodedToken); 
+        console.log(owner); 
         const fun = async ()=>{
         const response = await axios.post('http://localhost:3001/gettweet',{owner});
         // const tweet = await response.json();
