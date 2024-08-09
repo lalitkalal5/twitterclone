@@ -1,14 +1,13 @@
+# twitter-clone
 This is a Twitter Clone built using the MERN stack (MongoDB, Express.js, React, and Node.js).
 The project mimics the core features of Twitter, including user authentication, posting tweets, following users, and real-time updates.
 
-Features
+# Features
 User Authentication (Sign Up, Log In, Log Out)
 Post Tweets with character limit
 Follow/Unfollow Users
-Like/Unlike Tweets
-Real-Time Updates with WebSockets (Socket.IO)
 Profile Page with User Info and Tweets
-Search Users by Name
+Search Users by Name and Username
 View Profiles with User's Tweets
 Token-based authentication using JWT
 
