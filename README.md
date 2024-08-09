@@ -12,27 +12,27 @@ View Profiles with User's Tweets
 Token-based authentication using JWT
 
 
-#INSTALLATION
-# Start backend server
+# INSTALLATION
+Start backend server
 cd backend
 npm run dev
 
-# Start frontend server
+Start frontend server
 cd ../frontend
 npm start
 
-#USAGE
+# USAGE
 Sign up or log in to an account.
 Post tweets from the homepage.
 Search for other users and view their profiles.
 Follow or unfollow users.
 
 # Technologies Used
-# Frontend:
+Frontend:
 React.js
 React Router (Routing)
 Axios (HTTP Requests)
-# Backend:
+Backend:
 Node.js
 Express.js
 MongoDB (Mongoose ORM)
