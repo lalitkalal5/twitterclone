@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 
-const SECRET_KEY = "nfnf"; // It's recommended to use an environment variable for this in production
+const SECRET_KEY = "nfnf"; 
 
 const generatewebtoken = (user) => {
   const payload = {
