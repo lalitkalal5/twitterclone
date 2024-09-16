@@ -24,7 +24,7 @@ const Userprofile = () => {
     const fetchUserProfile = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3001/user/${userId}`,
+          `https://serverfortwitterclone-3.onrender.com/user/${userId}`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -45,7 +45,7 @@ const Userprofile = () => {
     const fetchTweets = async () => {
       try {
         const response = await axios.post(
-          "http://localhost:3001/gettweet/forprofile",
+          "https://serverfortwitterclone-3.onrender.com/gettweet/forprofile",
           { owner: userId },
           { headers: { Authorization: `Bearer ${token}` } }
         );
@@ -66,7 +66,7 @@ const Userprofile = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3001/followuser",
+        "https://serverfortwitterclone-3.onrender.com/followuser",
         {
           loggedinuser: loggedinuser,
           beingfolloweduser: userId,
