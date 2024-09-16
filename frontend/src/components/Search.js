@@ -10,8 +10,8 @@ const Search = () => {
 
     const searchuserbyquery = async(e) => {
       e.preventDefault();
-      // const resoponce = await axios.post('https:localhost:3001/tweet',{newtweet});
-      const response = await axios.post(`http://localhost:3001/search?search=${searchquery}`);
+      // const resoponce = await axios.post('https://serverfortwitterclone-3.onrender.com/tweet',{newtweet});
+      const response = await axios.post(`https://serverfortwitterclone-3.onrender.com/search?search=${searchquery}`);
       console.log(response.data);
       console.log("a")
       setSearchResults(response.data);
