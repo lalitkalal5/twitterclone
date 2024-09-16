@@ -23,7 +23,7 @@ const RegistrationForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:3001/register/register',{username,password,email});
+            const response = await axios.post('https://serverfortwitterclone-3.onrender.com/register/register',{username,password,email});
 
             localStorage.setItem('token', response.data.token);
             alert(response.data.message);
