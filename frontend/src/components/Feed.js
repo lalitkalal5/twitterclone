@@ -21,7 +21,7 @@ const Feed = () => {
         const owner = decodedToken.id;
         console.log(owner); 
         const fun = async ()=>{
-        const response = await axios.post('http://localhost:3001/gettweet',{owner});
+        const response = await axios.post('https://serverfortwitterclone-3.onrender.com/gettweet',{owner});
         // const tweet = await response.json();
         console.log(response.data);
         setTweet(response.data.reverse());
@@ -35,7 +35,7 @@ const Feed = () => {
       const token = localStorage.getItem('token');
       const decodedToken = jwtDecode(token);
       const owner = decodedToken.id;
-      // const resoponce = await axios.post('https:localhost:3001/tweet',{newtweet});
+      // const resoponce = await axios.post('https://serverfortwitterclone-3.onrender.com/tweet',{newtweet});
       const response = await axios.post('http://localhost:3001/tweet',{owner,content});
       // console.log(response.data);
     }   
