@@ -8,13 +8,14 @@ import searchrouter from "./routes/searchrouter.js";
 import bodyParser from "body-parser";
 import cors from "cors";
 const app = express();
-app.use(
-  cors({
-    origin: "https://twitterclone-umber.vercel.app/", // Allow requests from this origin
-    methods: ["GET", "POST", "PUT", "DELETE"], // Specify allowed methods
-    credentials: true, // Allow cookies and other credentials
-  })
-);
+// app.use(
+//   cors({
+//     origin: "https://twitterclone-umber.vercel.app/", // Allow requests from this origin
+//     methods: ["GET", "POST", "PUT", "DELETE"], // Specify allowed methods
+//     credentials: true, // Allow cookies and other credentials
+//   })
+// );
+app.use(cors());
 app.use(bodyParser.json({ limit: "50mb" }));
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 
