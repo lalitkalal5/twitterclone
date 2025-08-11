@@ -7,6 +7,7 @@ const Search = () => {
     const navigate = useNavigate();
     const [searchquery,setSearchquery] =useState('');
     const [searchResults,setSearchResults] =useState({result :[],result2:[]});
+
     const searchuserbyquery = async(e) => {
       e.preventDefault();
       // const resoponce = await axios.post('https://serverfortwitterclone-3.onrender.com/tweet',{newtweet});
@@ -15,11 +16,6 @@ const Search = () => {
       console.log("a")
       setSearchResults(response.data);
     }   
-    useeffect(()=>{
-      searchuseryquery()
-      },[searchquery])
-      
-    
   return (
 <>
 <NavBar/>
@@ -54,5 +50,7 @@ const Search = () => {
 </>
 )}
 export default Search
+
+
 
 
