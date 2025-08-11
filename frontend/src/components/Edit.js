@@ -61,7 +61,7 @@ const Edit = () => {
       };
 
       const response = await axios.post(
-        "http://localhost:3001/editprofile",
+        "https://serverfortwitterclone-3.onrender.com/editprofile",
         {
           userId,
           username,
