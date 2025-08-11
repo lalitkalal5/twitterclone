@@ -15,7 +15,7 @@ const Search = () => {
     }
 
     const delayDebounce = setTimeout(async () => {
-      const response = await axios.get(
+      const response = await axios.post(
         `https://serverfortwitterclone-3.onrender.com/search?search=${searchquery}`
       );
       setSearchResults(response.data);
@@ -26,7 +26,7 @@ const Search = () => {
 
   return (
     <>
-      {/* <NavBar /> */}
+      <NavBar /> 
       <div className='m-3 flex flex-col items-center'>
         <h2>Search for a user 🔍</h2>
         <input
