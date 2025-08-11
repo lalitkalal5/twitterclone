@@ -1,33 +1,29 @@
-
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import NavBar from './navbar';
-import { Link } from 'react-router-dom';
-
+import { Link, useNavigate} from 'react-router-dom';
+import { jwtDecode } from 'jwt-decode';
 const Search = () => {
-  const [searchquery, setSearchquery] = useState('');
-  const [searchResults, setSearchResults] = useState({ result: [], result2: [] });
-
-  useEffect(() => {
-    if (!searchquery) {
-      setSearchResults({ result: [], result2: [] });
-      return;
-    }
-
-    const delayDebounce = setTimeout(async () => {
-      const response = await axios.post(
-        `https://serverfortwitterclone-3.onrender.com/search?search=${searchquery}`
-      );
+    const navigate = useNavigate();
+    const [searchquery,setSearchquery] =useState('');
+    const [searchResults,setSearchResults] =useState({result :[],result2:[]});
+    const searchuserbyquery = async(e) => {
+      e.preventDefault();
+      // const resoponce = await axios.post('https://serverfortwitterclone-3.onrender.com/tweet',{newtweet});
+      const response = await axios.post(`https://serverfortwitterclone-3.onrender.com/search?search=${searchquery}`);
+      console.log(response.data);
+      console.log("a")
       setSearchResults(response.data);
-    }, 300); // wait 300ms after typing stops
-
-    return () => clearTimeout(delayDebounce);
-  }, [searchquery]);
-
+    }   
+    useeffect(()=>{
+      searchuseryquery()
+      },[searchquery])
+      
+    
   return (
-    <>
-      <NavBar /> 
-      <div className='m-3 flex flex-col items-center'>
+<>
+<NavBar/>
+	 <div className='m-3 flex flex-col items-center'>
         <h2>Search for a user 🔍</h2>
         <input
           type="text"
@@ -37,23 +33,26 @@ const Search = () => {
           className="border p-2 rounded w-64"
         />
       </div>
+        <div className="bg-sky-300 text-white ">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        {searchResults.result.map(user => (
+                            <div key={user._id} className="bg-white shadow-md rounded p-4 flex flex-col items-center">
+                                <img 
+                                    src={user.profilePic || "https://via.placeholder.com/150"}  // Assuming profilePictureUrl is the field for profile picture URL
+                                    alt={`${user.username}'s profile`} 
+                                    className="w-24 h-24 rounded-full mb-2"
+                                />
+                                <Link to={`/userprofile/${user._id}`} className="text-blue-500 hover:underline">
+                                    {user.username}
+                                </Link>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            
+  
+</>
+)}
+export default Search
 
-      <div className="p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {searchResults.result.map(user => (
-          <div key={user._id} className="bg-white shadow-lg rounded-lg p-4 flex flex-col items-center hover:shadow-xl transition">
-            <img
-              src={user.profilePic || "https://via.placeholder.com/150"}
-              alt={`${user.username}'s profile`}
-              className="w-24 h-24 rounded-full mb-3 border"
-            />
-            <Link to={`/userprofile/${user._id}`} className="text-blue-600 font-semibold hover:underline">
-              {user.username}
-            </Link>
-          </div>
-        ))}
-      </div>
-    </>
-  );
-};
 
-export default Search;
