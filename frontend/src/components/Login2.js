@@ -11,7 +11,7 @@ const Login2 = () => {
   const handleLogin = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3001/login/login', { username, password });
+      const response = await axios.post('https://serverfortwitterclone-3.onrender.com/login/login', { username, password });
 
       localStorage.setItem('token', response.data.token);
       alert(response.data.message);
