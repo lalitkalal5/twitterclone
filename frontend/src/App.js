@@ -8,6 +8,7 @@ import Search from './components/Search';
 import Userprofile from './components/Userprofile';
 import Login2 from './components/Login2';
 import RegistrationForm from './components/RegistrationForm';
+import Feed2 from './components/Feed2';
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
       <Routes>
        <Route path='/' element={<Login2/>} />
        <Route path='/register' element={<RegistrationForm />} />
-       <Route path='/feed' element={<Feed />} />
+       <Route path='/feed' element={<Feed2 />} />
        <Route path='/profile' element={<Profile />} />
        <Route path='/userprofile/:userId' element={<Userprofile />} />
        <Route path='/Editprofile' element={<Edit />} />
