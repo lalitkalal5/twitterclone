@@ -29,7 +29,7 @@ const Userprofile = () => {
             headers: { Authorization: `Bearer ${token}` },
           }
         );
-        console.log("this is doosra's profile ");
+        console.log("this is someone else's profile ");
         setUser((prevData) => ({ ...prevData, ...response.data }));
         console.log(response.data)
         setProfileImage(response.data.profilePic || "");
@@ -80,7 +80,33 @@ const Userprofile = () => {
     }
   }
 
-  if (!user) return <div>Loading...</div>;
+  if (!user) {
+  return (
+    <div className="bg-gray-100 min-h-screen">
+      <NavBar />
+      <div className="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg mt-10 animate-pulse">
+        <div className="text-center">
+          <div className="w-32 h-32 mx-auto rounded-full bg-gray-300 mb-4"></div>
+          <div className="h-6 bg-gray-300 rounded w-1/3 mx-auto mb-2"></div>
+          <div className="h-4 bg-gray-300 rounded w-1/4 mx-auto mb-1"></div>
+          <div className="h-4 bg-gray-200 rounded w-1/2 mx-auto"></div>
+        </div>
+        <div className="flex justify-center gap-4 mt-6">
+          <div className="h-5 bg-gray-300 rounded w-20"></div>
+          <div className="h-5 bg-gray-300 rounded w-20"></div>
+        </div>
+        <div className="mt-8">
+          <div className="h-6 bg-gray-300 rounded w-1/4 mb-4"></div>
+          <div className="space-y-4">
+            <div className="h-20 bg-gray-200 rounded"></div>
+            <div className="h-20 bg-gray-200 rounded"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 
   return (
     <div className="bg-gray-100 min-h-screen">
