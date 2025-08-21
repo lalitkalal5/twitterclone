@@ -26,13 +26,13 @@
 // routes/twitterrouter2.js
 import express from "express";
 import tweetModel from "../models/tweet.model.js";
-import User from "../models/users.js";
+import users from "../models/users.js";
 
 const router = express.Router();
 
 router.post("/", async (req, res) => {
   const owner = req.body.owner;
-  const user = await User.findById(owner).select("following");
+  const user= await users.findById(owner).select("following");
 
   // Sort by createdAt (new docs) and fallback naturally to _id order
   const tweets = await tweetModel
