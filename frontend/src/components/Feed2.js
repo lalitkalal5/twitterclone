@@ -214,6 +214,7 @@ const Feed2 = () => {
         );
         // backend already sorts; don't reverse here
         setTweet(response.data);
+        console.log(tweet);
       } catch (error) {
         console.error("Error fetching tweets:", error);
       } finally {
