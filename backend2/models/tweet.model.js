@@ -24,4 +24,4 @@ const tweetSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export default mongoose.model("tweet", tweetSchema); // capitalized name is conventional
+export default mongoose.model("Tweet", tweetSchema); // capitalized name is conventional
