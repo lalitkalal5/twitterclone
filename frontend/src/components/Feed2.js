@@ -210,6 +210,7 @@ const Feed2 = () => {
           { owner }
         );
         setTweets(res.data || []);
+        console.log(res.data);
       } catch (err) {
         console.error("Error fetching tweets:", err);
       }
