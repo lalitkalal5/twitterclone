@@ -7,7 +7,7 @@ const Edit = () => {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [name, setName] = useState("");
-  const [bio, setBio] = useState("");
+  const [Bio, setBio] = useState("");
   const [profilePic, setProfilePic] = useState("");
   const [error, setError] = useState("");
 
@@ -66,7 +66,7 @@ const Edit = () => {
           userId,
           username,
           name,
-          Bio: bio,
+          Bio,
           profilePic,
         },
         config
@@ -114,9 +114,9 @@ const Edit = () => {
         <div className="form-group">
           <label>Bio:</label>
           <textarea
-            name="bio"
+            name="Bio"
             placeholder="Edit your Bio"
-            value={bio}
+            value={Bio}
             onChange={(e) => setBio(e.target.value)}
           />
         </div>
